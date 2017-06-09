@@ -1,1 +1,1 @@
-irun -f stim.f -c
+irun -f stim.f 
