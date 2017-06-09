@@ -1,4 +1,4 @@
-`include ""
+`include "constants.vh"
 
 module mux_4x1(
 	       input [1:0] 	       sel,

@@ -2,12 +2,12 @@
 
 module ram_sync_2r1w(
 		     input 			      clk,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr2,
-		     output reg [BRAM_DATA_WIDTH-1:0] rdata1,
-		     output reg [BRAM_DATA_WIDTH-1:0] rdata2,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata,
+		     input [`ADDR_LEN-1:0]      raddr1,
+		     input [`ADDR_LEN-1:0]      raddr2,
+		     output reg [`DATA_LEN-1:0] rdata1,
+		     output reg [`DATA_LEN-1:0] rdata2,
+		     input [`ADDR_LEN-1:0]      waddr,
+		     input [`DATA_LEN-1:0]      wdata,
 		     input 			      we
 		     );
    
@@ -27,14 +27,14 @@ endmodule // ram_sync_2r1w
 
 module ram_sync_2r2w(
 		     input 			      clk,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr2,
-		     output reg [BRAM_DATA_WIDTH-1:0] rdata1,
-		     output reg [BRAM_DATA_WIDTH-1:0] rdata2,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr2,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata1,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata2,
+		     input [`ADDR_LEN-1:0]      raddr1,
+		     input [`ADDR_LEN-1:0]      raddr2,
+		     output reg [`DATA_LEN-1:0] rdata1,
+		     output reg [`DATA_LEN-1:0] rdata2,
+		     input [`ADDR_LEN-1:0]      waddr1,
+		     input [`ADDR_LEN-1:0]      waddr2,
+		     input [`DATA_LEN-1:0]      wdata1,
+		     input [`DATA_LEN-1:0]      wdata2,
 		     input 			      we1,
 		     input 			      we2
 		     );
@@ -57,16 +57,16 @@ endmodule // ram_sync_2r2w
 
 module ram_sync_4r1w(
 		     input 			      clk,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr2,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr3,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr4,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata1,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata2,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata3,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata4,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata,
+		     input [`ADDR_LEN-1:0]      raddr1,
+		     input [`ADDR_LEN-1:0]      raddr2,
+		     input [`ADDR_LEN-1:0]      raddr3,
+		     input [`ADDR_LEN-1:0]      raddr4,
+		     output wire [`DATA_LEN-1:0] rdata1,
+		     output wire [`DATA_LEN-1:0] rdata2,
+		     output wire [`DATA_LEN-1:0] rdata3,
+		     output wire [`DATA_LEN-1:0] rdata4,
+		     input [`ADDR_LEN-1:0]      waddr,
+		     input [`DATA_LEN-1:0]      wdata,
 		     input 			      we
 		     );
    parameter BRAM_ADDR_WIDTH = `ADDR_LEN;
@@ -103,18 +103,18 @@ endmodule // ram_sync_4r1w
 
 module ram_sync_4r2w(
 		     input 			      clk,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr2,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr3,
-		     input [BRAM_ADDR_WIDTH-1:0]      raddr4,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata1,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata2,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata3,
-		     output wire [BRAM_DATA_WIDTH-1:0] rdata4,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr1,
-		     input [BRAM_ADDR_WIDTH-1:0]      waddr2,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata1,
-		     input [BRAM_DATA_WIDTH-1:0]      wdata2,
+		     input [`ADDR_LEN-1:0]      raddr1,
+		     input [`ADDR_LEN-1:0]      raddr2,
+		     input [`ADDR_LEN-1:0]      raddr3,
+		     input [`ADDR_LEN-1:0]      raddr4,
+		     output wire [`DATA_LEN-1:0] rdata1,
+		     output wire [`DATA_LEN-1:0] rdata2,
+		     output wire [`DATA_LEN-1:0] rdata3,
+		     output wire [`DATA_LEN-1:0] rdata4,
+		     input [`ADDR_LEN-1:0]      waddr1,
+		     input [`ADDR_LEN-1:0]      waddr2,
+		     input [`DATA_LEN-1:0]      wdata1,
+		     input [`DATA_LEN-1:0]      wdata2,
 		     input 			      we1,
 		     input 			      we2
 		     );
@@ -158,22 +158,22 @@ endmodule // ram_sync_4r2w
 
 module ram_sync_6r2w(
 			     input 			      clk,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr1,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr2,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr3,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr4,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr5,
-			     input [BRAM_ADDR_WIDTH-1:0]      raddr6,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata1,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata2,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata3,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata4,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata5,
-			     output wire [BRAM_DATA_WIDTH-1:0] rdata6,
-			     input [BRAM_ADDR_WIDTH-1:0]      waddr1,
-			     input [BRAM_ADDR_WIDTH-1:0]      waddr2,
-			     input [BRAM_DATA_WIDTH-1:0]      wdata1,
-			     input [BRAM_DATA_WIDTH-1:0]      wdata2,
+			     input [`ADDR_LEN-1:0]      raddr1,
+			     input [`ADDR_LEN-1:0]      raddr2,
+			     input [`ADDR_LEN-1:0]      raddr3,
+			     input [`ADDR_LEN-1:0]      raddr4,
+			     input [`ADDR_LEN-1:0]      raddr5,
+			     input [`ADDR_LEN-1:0]      raddr6,
+			     output wire [`DATA_LEN-1:0] rdata1,
+			     output wire [`DATA_LEN-1:0] rdata2,
+			     output wire [`DATA_LEN-1:0] rdata3,
+			     output wire [`DATA_LEN-1:0] rdata4,
+			     output wire [`DATA_LEN-1:0] rdata5,
+			     output wire [`DATA_LEN-1:0] rdata6,
+			     input [`ADDR_LEN-1:0]      waddr1,
+			     input [`ADDR_LEN-1:0]      waddr2,
+			     input [`DATA_LEN-1:0]      wdata1,
+			     input [`DATA_LEN-1:0]      wdata2,
 			     input 			      we1,
 			     input 			      we2
 			     );
