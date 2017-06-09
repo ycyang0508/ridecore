@@ -66,3 +66,11 @@ dbgvcs: $(OBJS) $(OBJDBG)
 
 prvcs: $(OBJS) $(OBJPRD)
 	vcs $(SIMOP1) $(SIMOP2) $(OBJS) $(OBJPRD)
+
+lastirun: $(OBJS) $(OBJLST)
+	irun -64bit -g -sv -faccess rwc -f stim_last.f
+
+dbgirun: $(OBJS) $(OBJLST)
+	irun -64bit -g -sv -faccess rwc -f stim_dbg.f
+prvirun: $(OBJS) $(OBJLST)
+	irun -64bit -g -sv -faccess rwc -f stim_prv.f
